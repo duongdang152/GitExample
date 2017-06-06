@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lep-Pv-evE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="Hnm-fQ-OU2">
+            <objects>
+                <navigationController id="lep-Pv-evE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b7c-ba-kFp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aAJ-Gt-DFe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wpl-gr-LuE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-268" y="-34"/>
+        </scene>
+        <!--Git example-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GitExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,16 +43,58 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsD-xe-aJW">
+                                <rect key="frame" x="132" y="365.5" width="111" height="30"/>
+                                <state key="normal" title="Go to color view"/>
+                                <connections>
+                                    <segue destination="oRN-bj-S0D" kind="show" id="Zp2-Vf-Rbt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="01c-Yj-gwY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0hZ-sZ-Kqg"/>
                             <constraint firstItem="01c-Yj-gwY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Slw-cL-FJF"/>
+                            <constraint firstItem="rsD-xe-aJW" firstAttribute="top" secondItem="01c-Yj-gwY" secondAttribute="bottom" constant="20" id="bDn-oX-uGp"/>
+                            <constraint firstItem="rsD-xe-aJW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wMq-g8-a3p"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Git example" id="SpH-UD-4fd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="457" y="-32"/>
+        </scene>
+        <!--Color -->
+        <scene sceneID="hSX-NT-brp">
+            <objects>
+                <viewController title="Color " id="oRN-bj-S0D" customClass="ColorViewController" customModule="GitExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gQr-jH-rTr"/>
+                        <viewControllerLayoutGuide type="bottom" id="ka3-cA-Lbm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uv3-0Y-SFw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5wF-am-E41">
+                                <rect key="frame" x="99" y="318" width="177" height="30"/>
+                                <state key="normal" title="Change background color"/>
+                                <connections>
+                                    <action selector="changeBackgroundColorPress:" destination="oRN-bj-S0D" eventType="touchUpInside" id="Azr-OQ-Q4T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.84144081276471661" blue="0.48002079196773728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5wF-am-E41" firstAttribute="centerY" secondItem="uv3-0Y-SFw" secondAttribute="centerY" id="MwY-dj-3Qo"/>
+                            <constraint firstItem="5wF-am-E41" firstAttribute="centerX" secondItem="uv3-0Y-SFw" secondAttribute="centerX" id="oPe-9b-4M2"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mYA-Ak-MYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1314" y="-33"/>
         </scene>
     </scenes>
 </document>
